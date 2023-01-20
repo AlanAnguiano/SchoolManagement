@@ -1,0 +1,13 @@
+<nav class="navbar sticky-top school-managment__navbar">
+  <div class="container-fluid d-flex justify-content-between">
+    <div class="fs-2" role="button" data-bs-toggle="offcanvas" data-bs-target="#schoolManagmentSideMenu" aria-controls="staticBackdrop">
+      <i class="bi bi-list"></i>
+    </div>
+    <span class="navbar-brand mb-0 h1 navbar__title">School managment</span>
+    <div class="d-flex fs-2">
+      <%= link_to(destroy_admin_session_path, method: :delete, class: 'admin-log-out__link') do %>
+        <i class="bi bi-box-arrow-in-left"></i>
+      <% end %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,19 @@
+.sign-in-form__container {
+  background: rgb(63,94,251);
+  background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+.sign-in__button {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) border-box;
+  border: 4px solid transparent;
+  transition: background-image 5s;
+  padding: 10px 0;
+
+  &:hover {
+    background: linear-gradient(90deg, rgba(252,70,107,1) 0%, rgba(63,94,251,1) 100%, );
+    border: none;
+    padding: 14px 0;
+    color: #ffffff;
+  }
+}

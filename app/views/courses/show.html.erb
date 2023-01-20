@@ -1,0 +1,40 @@
+<%= render 'shared/side_nav' %>
+<%= render 'shared/navbar' %>
+
+<div class="d-flex justify-content-center my-4">
+  <h1><%=  @course.course_name %> Students</h1>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="w-75 d-flex justify-content-start my-2">
+    <div>
+      <%= link_to 'Back', courses_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive d-flex justify-content-center">
+  <table class="table table-striped mt-2 w-75">
+    <thead class="table-head">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Grade</th>
+        <th scope="col">Passed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @course.students.each_with_index do |student, i| %>
+        <tr>
+          <% student_grade = student.grades.where(course_id: @course.id).first %>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= student.name %></td>
+          <td><%= student_grade.total unless student_grade.nil? %></td>
+          <td>
+            <%= (student_grade.passed ? '<i class="bi bi-check-lg"></i>'.html_safe : '<i class="bi bi-x-lg"></i>'.html_safe) unless student_grade.nil? %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

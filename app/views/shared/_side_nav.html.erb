@@ -1,0 +1,22 @@
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="schoolManagmentSideMenu" aria-labelledby="schoolManagmentSideMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fs-3" id="schoolManagmentSideMenuLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <hr>
+  <div class="offcanvas-body">
+    <div>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <%= link_to root_path, class: "nav-link #{ current_page?(root_path) ? 'active' : 'link-dark' }" do %>
+            <span><i class="bi bi-table mr-2"></i> Students List </span>
+          <% end %>
+
+          <%= link_to courses_path, class: "nav-link #{ current_page?(courses_path) ? 'active' : 'link-dark' }" do %>
+            <span><i class="bi bi-table mr-2"></i> Courses List </span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
