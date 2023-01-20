@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authenticate_admin!
 
   def index
     @courses = Course.all

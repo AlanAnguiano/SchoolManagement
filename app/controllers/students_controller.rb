@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authenticate_admin!
   before_action :load_student, only: [:remove_course, :show_courses, :current_courses, :assign_courses]
 
   def index

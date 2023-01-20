@@ -1,4 +1,5 @@
 class GradesController < ApplicationController
+  before_action :authenticate_admin!
   before_action :load_entities
   before_action :load_grade, only: :update
 
